@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#DA251E</color>
+    <color name="colorPrimaryDark">#c9da1e21</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="card_pressed">#43000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="PrimaryTextColor">#1d3a62</color>
+    <color name="SecondaryTextColor">#ff2f2f2f</color>
+    <color name="TertiaryTextColor">#FFF</color>
+
+    <color name="PriceColor">#f37423</color>
+    <color name="oldPriceColor">#ff2a2b2a</color>
+</resources>

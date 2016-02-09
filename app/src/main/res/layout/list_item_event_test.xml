@@ -1,0 +1,40 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/session_target"
+    android:layout_width="match_parent"
+    android:layout_height="300dp">
+
+    <!-- Session image -->
+    <ImageView
+        android:id="@+id/session_photo_colored"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:src="@drawable/icon_event" />
+
+    <TextView
+        android:id="@+id/session_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Text Cate" />
+
+    <!-- Info box -->
+    <LinearLayout
+        android:id="@+id/info_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Session title -->
+        <TextView
+            android:id="@+id/session_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample thing" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.saleeh.astra.api.models.Participant" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:cardCornerRadius="0dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+
+            <TextView
+                android:id="@+id/roll_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:fontFamily="sans-serif-light"
+                android:text="@{item.dept}"
+                android:textColor="@color/PrimaryTextColor"
+                android:textSize="25sp"
+                tools:text="CSE" />
+
+            <TextView
+                android:id="@+id/item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@{item.sem}"
+                android:textColor="@color/PriceColor"
+                android:textSize="20dp"
+                tools:text="S8" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_toEndOf="@+id/roll_no"
+                android:layout_toRightOf="@+id/roll_no"
+                android:fontFamily="sans-serif-thin"
+                android:text="@{item.name}"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/PrimaryTextColor"
+                android:textSize="20dp"
+                tools:text="Saleeh" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</layout>

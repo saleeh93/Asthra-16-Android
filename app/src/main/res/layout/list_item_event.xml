@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.saleeh.astra.api.models.Event" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/session_target"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <!-- Session image -->
+        <ImageView
+            android:id="@+id/session_photo_colored"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/grid_image_width"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_event" />
+
+
+        <!-- Info box -->
+        <LinearLayout
+            android:id="@+id/info_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/session_photo_colored"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Session title -->
+            <TextView
+                android:id="@+id/session_title"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{item.name}"
+                tools:text="Hello world" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</layout>
