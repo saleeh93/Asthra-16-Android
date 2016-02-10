@@ -22,6 +22,20 @@
             android:layout_height="wrap_content"
             android:padding="10dp">
 
+            <TextView
+                android:id="@+id/roll_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:fontFamily="sans-serif-light"
+                android:text="@{item.position}"
+                android:textColor="@{item.getTextColor()}"
+                android:textSize="25sp"
+                tools:text="1" />
+
 
             <TextView
                 android:id="@+id/item_price"
@@ -30,7 +44,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:fontFamily="sans-serif-light"
-                android:text="@{item.sem}"
+                android:text="@{item.point}"
                 android:textColor="@{item.getTextColor()}"
                 android:textSize="25dp"
                 tools:text="S8" />
@@ -39,10 +53,13 @@
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/roll_no"
+                android:layout_toRightOf="@+id/roll_no"
                 android:fontFamily="sans-serif-light"
                 android:text="@{item.name}"
+
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@{item.getTextColor()}"
                 android:textSize="25dp"

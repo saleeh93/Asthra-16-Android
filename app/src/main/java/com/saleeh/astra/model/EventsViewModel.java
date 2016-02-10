@@ -15,6 +15,6 @@ import me.tatarka.bindingcollectionadapter.ItemView;
  */
 public class EventsViewModel {
     public final ObservableList<Event> items = new ObservableArrayList<>();
-    public final ItemView itemView = ItemView.of(BR.item, R.layout.list_item_event);
+    public final ItemView itemView = ItemView.of(BR.item, R.layout.list_item_event_new);
 
 }

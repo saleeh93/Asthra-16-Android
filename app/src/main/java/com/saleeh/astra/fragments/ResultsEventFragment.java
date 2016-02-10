@@ -11,13 +11,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 import com.saleeh.astra.PartcipientActivity;
+import com.saleeh.astra.ResultActivity;
 import com.saleeh.astra.api.ServiceAPI;
 import com.saleeh.astra.api.models.Event;
-import com.saleeh.astra.api.models.Group;
 import com.saleeh.astra.databinding.FragmentEventBinding;
-import com.saleeh.astra.databinding.FragmentHomeBinding;
 import com.saleeh.astra.model.EventsViewModel;
-import com.saleeh.astra.model.GroupViewModel;
 
 import java.util.List;
 
@@ -28,10 +26,10 @@ import retrofit.Retrofit;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EventsFragment extends BaseFragment {
+public class ResultsEventFragment extends BaseFragment {
 
 
-    public EventsFragment() {
+    public ResultsEventFragment() {
         // Required empty public constructor
     }
 
@@ -43,13 +41,13 @@ public class EventsFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentEventBinding.inflate(inflater, container, false);
-        binding.setViewModel(viewModel);
-
         ServiceAPI.getInstance().getApiService().events().enqueue(new Callback<List<Event>>() {
             @Override
             public void onResponse(Response<List<Event>> response, Retrofit retrofit) {
                 viewModel.items.addAll(response.body());
                 binding.progressView.setVisibility(View.GONE);
+
+
             }
 
             @Override
@@ -58,15 +56,16 @@ public class EventsFragment extends BaseFragment {
                 showMessage("Server Error :" + t.getMessage());
             }
         });
-
+        binding.setViewModel(viewModel);
         binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Event event = (Event) parent.getItemAtPosition(position);
-                Intent intent = new Intent(getActivity(), PartcipientActivity.class);
+                Intent intent = new Intent(getActivity(), ResultActivity.class);
                 intent.putExtra("id", event.id);
                 intent.putExtra("name", event.name);
                 startActivity(intent);
+
             }
         });
         return binding.getRoot();

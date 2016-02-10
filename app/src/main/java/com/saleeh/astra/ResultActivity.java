@@ -1,13 +1,13 @@
 package com.saleeh.astra;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.saleeh.astra.fragments.HomeFragment;
 import com.saleeh.astra.fragments.ParticipientFragment;
+import com.saleeh.astra.fragments.ParticipientResultFragment;
 
-public class PartcipientActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +15,6 @@ public class PartcipientActivity extends AppCompatActivity {
         setContentView(R.layout.activity_partcipient);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
-        getSupportFragmentManager().beginTransaction().add(R.id.container, ParticipientFragment.newInstance(getIntent().getStringExtra("id"), getIntent().getStringExtra("name"))).
-                commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.container, ParticipientResultFragment.newInstance(getIntent().getStringExtra("id"), getIntent().getStringExtra("name"))).commit();
     }
 }

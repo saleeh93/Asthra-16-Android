@@ -24,4 +24,5 @@ public class Group {
         int color = Color.parseColor(this.color);
         return color;
     }
+
 }
