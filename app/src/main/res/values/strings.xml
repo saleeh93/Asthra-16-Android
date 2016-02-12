@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Astra</string>
+    <string name="app_name">Asthra 16</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -8,4 +8,22 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_chat">ChatActivity</string>
+    <string name="title_activity_user">UserActivity</string>
+    <array name="colors">
+        <item>@color/cse</item>
+        <item>@color/ec</item>
+        <item>@color/ce</item>
+        <item>@color/me</item>
+        <item>@color/au</item>
+        <item>@color/ae</item>
+    </array>
+    <string-array name="groups">
+        <item>CSE</item>
+        <item>EC</item>
+        <item>CE</item>
+        <item>ME</item>
+        <item>AU-IT</item>
+        <item>AE</item>
+    </string-array>
 </resources>

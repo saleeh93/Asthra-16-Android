@@ -8,6 +8,50 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="CSETheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/cse</item>
+        <item name="colorPrimaryDark">@color/cseDark</item>
+        <item name="colorAccent">@color/cseDark</item>
+    </style>
+
+    <style name="CETheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/ce</item>
+        <item name="colorPrimaryDark">@color/ceDark</item>
+        <item name="colorAccent">@color/ceDark</item>
+    </style>
+
+    <style name="AETheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/ae</item>
+        <item name="colorPrimaryDark">@color/aeDark</item>
+        <item name="colorAccent">@color/aeDark</item>
+    </style>
+
+    <style name="ECTheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/ec</item>
+        <item name="colorPrimaryDark">@color/ecDark</item>
+        <item name="colorAccent">@color/cseDark</item>
+    </style>
+
+    <style name="METheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/me</item>
+        <item name="colorPrimaryDark">@color/meDark</item>
+        <item name="colorAccent">@color/meDark</item>
+    </style>
+
+    <style name="AUTheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/au</item>
+        <item name="colorPrimaryDark">@color/auDark</item>
+        <item name="colorAccent">@color/auDark</item>
+    </style>
+
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -45,7 +89,7 @@
     <style name="Material_Card_View">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">6dp</item>
+        <item name="android:layout_margin">2dp</item>
     </style>
 
 </resources>

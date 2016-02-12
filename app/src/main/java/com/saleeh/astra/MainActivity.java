@@ -1,9 +1,13 @@
 package com.saleeh.astra;
 
+import android.databinding.tool.util.StringUtils;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,18 +18,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.ParseInstallation;
+import com.parse.ParseObject;
 import com.saleeh.astra.fragments.EventsFragment;
 import com.saleeh.astra.fragments.HomeFragment;
 import com.saleeh.astra.fragments.ResultsEventFragment;
 
-public class MainActivity extends AppCompatActivity
+
+public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -36,9 +43,28 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        getSupportFragmentManager().beginTransaction().add(R.id.container, new HomeFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
+        getSupportFragmentManager().addOnBackStackChangedListener(
+                new FragmentManager.OnBackStackChangedListener() {
+                    public void onBackStackChanged() {
+                        // Update your UI here.
+                    }
+                });
+        setUp();
+
 
     }
+
+    private void setAppTheme(int color) {
+        toolbar.setBackgroundColor(color);
+        setTheme(R.style.AETheme);
+        if (Build.VERSION.SDK_INT >= 21) {
+            toolbar.setBackgroundColor(color);
+            getWindow().setNavigationBarColor(color);
+            getWindow().setStatusBarColor(color);
+        }
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -50,6 +76,17 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -75,7 +112,9 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, fr).commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, fr)
+                .addToBackStack("back").commit();
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

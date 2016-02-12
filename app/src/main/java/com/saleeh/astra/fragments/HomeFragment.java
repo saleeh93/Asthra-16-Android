@@ -2,12 +2,17 @@ package com.saleeh.astra.fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.saleeh.astra.R;
 import com.saleeh.astra.api.ServiceAPI;
 import com.saleeh.astra.databinding.FragmentHomeBinding;
 import com.saleeh.astra.model.GroupViewModel;
@@ -31,6 +36,30 @@ public class HomeFragment extends BaseFragment {
 
     FragmentHomeBinding binding;
     GroupViewModel viewModel = new GroupViewModel();
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        // Do something that differs the Activity's menu here
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_reload) {
+
+            binding.progressView.setVisibility(View.VISIBLE);
+            viewModel.items.clear();
+            loadData();
+        }
+        return true;
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
