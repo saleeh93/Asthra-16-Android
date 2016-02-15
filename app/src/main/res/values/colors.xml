@@ -13,12 +13,14 @@
     <color name="PriceColor">#f37423</color>
     <color name="oldPriceColor">#ff2a2b2a</color>
 
-    <color name="cse">#95a5a6</color>
+    <color name="cse">#d11cbc</color>
     <color name="me">#c0392b</color>
     <color name="au">#2e8ece</color>
     <color name="ae">#d35400</color>
     <color name="ec">#f1c40f</color>
     <color name="ce">#000000</color>
+
+    <color name="b_arch">#5b8115</color>
 
     <color name="cseDark">#95a5a6</color>
     <color name="meDark">#c0392b</color>

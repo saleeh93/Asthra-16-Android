@@ -17,6 +17,8 @@
         <item>@color/me</item>
         <item>@color/au</item>
         <item>@color/ae</item>
+
+        <item>@color/b_arch</item>
     </array>
     <string-array name="groups">
         <item>CSE</item>
@@ -25,5 +27,6 @@
         <item>ME</item>
         <item>AU-IT</item>
         <item>AE</item>
+        <item>B arch</item>
     </string-array>
 </resources>
