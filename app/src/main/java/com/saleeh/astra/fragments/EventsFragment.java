@@ -69,6 +69,13 @@ public class EventsFragment extends BaseFragment {
                 startActivity(intent);
             }
         });
+        binding.listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                return false;
+            }
+        });
         return binding.getRoot();
     }
 
